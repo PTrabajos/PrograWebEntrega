@@ -1,0 +1,116 @@
+html{
+  height: 70vh;
+}
+.Contenido{
+  
+  text-transform: capitalize;
+}
+body{
+  margin: 0px;
+  min-width: 100vh;
+  min-height: 100vh;
+}
+
+.BarraMenu {
+  float:left ;
+    height: 20px;
+    margin-top: 10px;
+    width: 50px;
+    text-align: center;
+}
+
+
+.Perfil{
+  float:right;
+  background-size: auto;
+  border:0px;
+  margin-right:10px;
+  margin-top: 15px;
+}
+  .Cabecera{
+    background-color: rgb(237, 213, 240);
+    height: 60px;
+    min-width: 80vh;
+    margin: 0px;
+  }
+  .Cabecera h2{
+    font-size: medium;
+    float: left;
+    min-width: 50%;
+    margin-left:20% ;
+    margin-top:20px;
+    text-align: center;
+    margin-bottom: 0px;
+  }
+  .Contenido-Menu{
+    float: left;
+    max-width: 240px;
+    width: 100%;
+    height: 7vh;
+
+  }
+  .menu{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    padding-bottom: 8px;
+    background-color: rgb(214, 214, 214);
+    min-height: 60vh;
+  }
+  .item{
+    display: block;
+    color: #3d4ac2;
+    font-size: 18px;
+    text-decoration:none;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    transform: translate(50px);
+    text-transform:capitalize;
+    
+  }
+  .version{
+    margin-top: 70vh;
+    transform: translate(50px);
+  }
+  .item:before{
+    content: '';
+    position: absolute;
+    left:-20px;
+    width: 0px;
+    height: 100%;
+    background: #1c2022;
+    transition: all 300ms;
+  }
+  .item:hover::before{
+    width: 6px;
+  }
+
+.menu-toggle{
+  float: left;
+  padding:1em;
+  position: relative;
+  top: 0.5em;
+  left: 0.5em;
+  background: none;
+}
+.hamburger,
+.hamburger::before,
+.hamburger::after{
+  content: '';
+  display: block;
+  background: black;
+  height: 3px;
+  width: 1.75em;
+  border-radius: 3px;
+}
+.hamburger::before{
+  transform: translateY(-6px);
+
+}
+
+.hamburger::after{
+  transform: translateY(3px);
+  
+}
