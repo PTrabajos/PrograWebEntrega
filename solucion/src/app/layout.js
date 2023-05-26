@@ -7,8 +7,11 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 import { useEffect } from 'react';
 import dynamic from "next/dynamic";
-import TopBar from '@/components/TopBar/TopBar';
-import Menu from '@/components/Menu/Menu';
+import React, {Component} from 'react';
+import { BsFillPersonFill } from "react-icons/bs";
+
+const iconos =require.context('../../Imagenes/Iconos',true)
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,17 +22,28 @@ function RootLayout({ children }) {
       <head>
 
       </head>
-      <body className={inter.className}>
-        <TopBar />
-        <main className="container">
-          <nav className="contenedorMenu">
-            <Menu />
-          </nav>
-          <section className="principal">
-            {children}
-          </section>
-        </main>
-      </body>
+      <body>
+        <div class="Contenido">
+        <header class="Cabecera">
+            <div class="menu-toggle">
+                <div class="hamburger"></div>
+            </div>
+            
+            <h2>Atención de Citas</h2>
+            <div class="Perfil">
+                <BsFillPersonFill/>
+            </div>
+        </header>
+        <div class="Contenido-Menu">
+            <nav class="menu">
+                <a href="#" class="item">Principal</a>
+                <a href="#" class="item">Perfil</a>
+                <a href="#" class="item">Citas</a>
+                <h6 class="version">SAC v1.0.1+alpha</h6>
+            </nav>
+        </div>
+    </div>
+</body>
     </html>
   )
 }
