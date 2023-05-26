@@ -1,10 +1,11 @@
 'use client';
 
+import 'bootstrap/dist/css/bootstrap.css'; // Add this line
 import Form from 'react-bootstrap/Form';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 
-import { useState } from 'react'
+import { useState } from 'react'    
 import { Button } from 'react-bootstrap';
 import PersonaApi from '@/api/persona.js'
 
@@ -37,7 +38,7 @@ const Ejercicio8 = () => {
     }
 
     return (
-        <div>
+        <div className='prueba'>
             <h2>
             Ejercicio 8
             </h2>

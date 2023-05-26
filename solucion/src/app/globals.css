@@ -1,7 +1,7 @@
 html,
 body {
   max-width: 100vw;
-  overflow-x: hidden;
+  overflow-x: visible;
 }
 
 .nobullets {
@@ -56,7 +56,7 @@ body{
   }
   .Contenido-Menu{
     float: left;
-    max-width: 240px;
+    max-width: 200px;
     width: 100%;
     height: 7vh;
 
@@ -80,6 +80,7 @@ body{
     position: relative;
     transform: translate(50px);
     text-transform:capitalize;
+    width: fit-content;
     
   }
   .version{
@@ -125,4 +126,8 @@ body{
 .hamburger::after{
   transform: translateY(3px);
   
+}
+.prueba{
+  display: block;
+  float: left;
 }

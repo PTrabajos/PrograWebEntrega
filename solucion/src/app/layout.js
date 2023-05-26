@@ -9,8 +9,8 @@ import { useEffect } from 'react';
 import dynamic from "next/dynamic";
 import React, {Component} from 'react';
 import { BsFillPersonFill } from "react-icons/bs";
+import Link from '../components/Link/Link.jsx';
 
-const iconos =require.context('../../Imagenes/Iconos',true)
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -36,12 +36,23 @@ function RootLayout({ children }) {
         </header>
         <div class="Contenido-Menu">
             <nav class="menu">
-                <a href="#" class="item">Principal</a>
-                <a href="#" class="item">Perfil</a>
-                <a href="#" class="item">Citas</a>
+                <nav class="item">
+                <Link href="/ejercicio4" text="Princial"/>
+                </nav>
+                <nav class="item">
+                <Link href="/ejercicio4" text="Perfil"/>
+                </nav>
+                <nav class="item">
+                <Link href="/ejercicio8" text="Citas"/>
+                </nav>
+                
                 <h6 class="version">SAC v1.0.1+alpha</h6>
+                
             </nav>
         </div>
+        <section className='principal'>
+          {children}
+        </section>
     </div>
 </body>
     </html>
