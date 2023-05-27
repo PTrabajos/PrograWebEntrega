@@ -10,9 +10,7 @@ body {
   margin: 0; /* Remove margins */
 }
 
-html{
-  height: 70vh;
-}
+
 .Contenido{
   
   text-transform: capitalize;

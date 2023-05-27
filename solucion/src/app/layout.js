@@ -20,7 +20,7 @@ function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-
+ 
       </head>
       <body>
         <div class="Contenido">
@@ -43,7 +43,7 @@ function RootLayout({ children }) {
                 <Link href="/ejercicio4" text="Perfil"/>
                 </nav>
                 <nav class="item">
-                <Link href="/ejercicio8" text="Citas"/>
+                <Link href="/MisCitas" text="Citas"/>
                 </nav>
                 
                 <h6 class="version">SAC v1.0.1+alpha</h6>

@@ -5,3 +5,7 @@ CSS de page.js
 .main {
   display: flex;
 }
+
+.prueba{
+  width: 100px;
+}
