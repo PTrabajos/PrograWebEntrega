@@ -37,10 +37,10 @@ function RootLayout({ children }) {
         <div class="Contenido-Menu">
             <nav class="menu">
                 <nav class="item">
-                <Link href="/ejercicio4" text="Princial"/>
+                <Link href="/Alumno" text="Princial"/>
                 </nav>
                 <nav class="item">
-                <Link href="/ejercicio4" text="Perfil"/>
+                <Link href="/PerfilDocente" text="Perfil"/>
                 </nav>
                 <nav class="item">
                 <Link href="/MisCitas" text="Citas"/>

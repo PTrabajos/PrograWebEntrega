@@ -14,7 +14,7 @@ const Ejercicio8 = () => {
     const router = useRouter()
     
     const handleclick=() =>{
-        router.push('/Reservar_Citas')
+        router.push('/reservarcita')
     }
 
     return (
