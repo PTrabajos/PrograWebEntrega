@@ -45,6 +45,9 @@ function RootLayout({ children }) {
                 <nav class="item">
                 <Link href="/MisCitas" text="Citas"/>
                 </nav>
+                <nav class="item">
+                <Link href="/reservarcita" text="Reservar citas"/>
+                </nav>
                 
                 <h6 class="version">SAC v1.0.1+alpha</h6>
                 
