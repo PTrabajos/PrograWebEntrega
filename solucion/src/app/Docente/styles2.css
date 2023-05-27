@@ -1,0 +1,24 @@
+.main {
+    display: flex;
+  }
+  
+  .middlebar{
+    display: flex;
+    margin-left: 250px;
+    margin-top: 30px;
+    justify-content: space-between;
+  
+  }
+  
+  .appointments {
+    
+    padding-left: 0%;
+  }
+  
+  .linea{
+      margin-left: 200px;
+  }
+  
+  .container{
+    background-color: rgb(229, 180, 236);
+  }
