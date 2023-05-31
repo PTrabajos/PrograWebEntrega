@@ -69,7 +69,7 @@ function Datos(){
     </div>
 }
 
-function Ejercicio3() {
+function Perfil() {
     return <div>
         <div className="row">
         <div className="col-md-11"><Info/>
@@ -78,4 +78,4 @@ function Ejercicio3() {
     </div>
 }
 
-export default Ejercicio3
+export default Perfil

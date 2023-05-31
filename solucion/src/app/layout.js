@@ -40,7 +40,10 @@ function RootLayout({ children }) {
                 <Link href="/Alumno" text="Princial"/>
                 </nav>
                 <nav class="item">
-                <Link href="/PerfilDocente" text="Perfil"/>
+                <Link href="/Perfil" text="Perfil Alumno"/>
+                </nav>
+                <nav class="item">
+                <Link href="/PerfilDocente" text="Perfil Docente"/>
                 </nav>
                 <nav class="item">
                 <Link href="/MisCitas" text="Citas"/>
