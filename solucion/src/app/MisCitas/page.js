@@ -14,7 +14,7 @@ const Ejercicio8 = () => {
     const router = useRouter()
     
     const handleclick=() =>{
-        router.push('/reservarcita')
+        router.push('/reservaUsuario')
     }
 
     return (
@@ -24,12 +24,14 @@ const Ejercicio8 = () => {
             </h2>
             <hr />
              <h3 className='Ncitas'>Actualmente no tiene citas de Asesoría reservadas</h3>
-            <nav className='Button'> 
-             <Button  onClick={handleclick}>Programar una cita</Button>
-             </nav>
+            <button className='Button' onClick={()=>handleclick()}> 
+               Programar una cita
+             </button>
         </div>
+        
         
     )
 } 
+
 
 export default Ejercicio8
