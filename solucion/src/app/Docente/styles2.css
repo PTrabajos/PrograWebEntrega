@@ -1,24 +1,58 @@
 .main {
-    display: flex;
-  }
-  
-  .middlebar{
-    display: flex;
+  display: flex;
+}
+
+.middlebar{
+  display: flex;
+  margin-left: 300px;
+  margin-top: 20px;
+  justify-content: space-between;
+
+}
+
+.appointments {
+  margin-top: 30px;
+  margin-left: 250px;
+  margin-right: 50px;
+}
+
+.linea{
     margin-left: 250px;
-    margin-top: 30px;
-    justify-content: space-between;
+    margin-right: 50px;
+}
+
+.tablaCitas{
+  background-color: rgb(253, 225, 255);
+  height: 370px;
+  width: 100%;
   
-  }
+}
+
+.asesoria1{
+  border-radius: 40px;
+  margin-left: 50px;
+  border: 1px solid #CAC4D0;
+  border-radius: 12px;
+  background-color: rgb(239, 198, 223);
   
-  .appointments {
-    
-    padding-left: 0%;
-  }
-  
-  .linea{
-      margin-left: 200px;
-  }
-  
-  .container{
-    background-color: rgb(229, 180, 236);
-  }
+}
+
+.asesoria2{
+  border-radius: 40px;
+  margin-left: 50px;
+  border-radius: 12px;
+  background-color: rgb(239, 198, 223);
+  border: 1px solid #CAC4D0;
+}
+
+.tablaCitas h3{
+  padding-left: 50px;
+}
+
+.indice{
+  padding-left: 1500px;
+  top: 392px;
+  color: #000000;
+  font-family: 'Roboto';
+ 
+}
