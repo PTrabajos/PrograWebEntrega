@@ -1,87 +1,369 @@
 
-
-.boton{
-    margin-right: 80px;
-    
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.barra{
-    margin-left: 250px;
-}
 
-.middlebar{
-    display: flex;
-    margin-left: 250px;
-    margin-top: 30px;
-    justify-content: space-between;
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
   
-}
+  /* Estilos de la barra superior */
+  
+  .table-container {
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px solid #1D1B20;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 10px;
+  }
+  
+  .table-container tr {
+    height: 56px;
+  }
+  
+  .table-container td {
+    padding: 0px;
+  }
 
-.col-md-4{
-    margin-left: 250px;
-    padding-right: 290px;
-    
-}
+  /* Estilos de la barra de navegación lateral */
+  
+  .barranav {
+    background-color: #d1d1d1;
+    height: 100vh;
+    /*border: 1px solid #1D1B20;
+    border-radius: 4px;*/
+    box-sizing: border-box;
+    padding: 10px;
+  }
+  
+  .barranav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .barranav li {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: #555555;
+    font-weight: bold;
+  }
+  
+  .barranav li:hover {
+    background-color: #e6e6e6;
+  }
+  
 
-
-
-.col-md-5{
-    margin-left: 250px;
-}
-
-.col-md-6{
-    padding-left: 260px;
-    padding-right: 50px;
-    
-}
-
-.col-md-3{
-    padding-right: 100px;
-}
-
-
-
-.linea{
-    margin-left: 200px;
-}
-
-.cabecera{
-    background-color: rgb(229, 180, 236);
-    height: 60px;
-    min-width: 80vh;
-    margin-left: 200px;
-    margin-right: 90%;
-    text-align: center;
-}
-
-.cabecera button{
-    background-color: rgb(229, 180, 236);
-    border-color: transparent;
-     
-}
-
-.contenido{
-    background-color: rgb(229, 180, 236);
-    padding-bottom: 190px;
-}
-
-.form-container{
-
-    margin-left:250px;
-}
-
-
-
-.nav{
-
-    margin-top: 10px;
-    text-transform:capitalize;
-   
-}
-
-.img{
+  /* botones */
+  .guardar {
     position: absolute;
-    width: 340px;
-    right: 0;
-    top: 170px;
-}
+    top: 100px;
+    right: 30px;
+    transform: translateY(-50%);
+    width: 100px;
+    height: 40px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #FFFFFF;
+    background-color: #8e44ad;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+  }
+  
+  .guardar:hover {
+    background-color: #9b59b6;
+  }
+  
+  .guardar:active {
+    background-color: #7d3c98;
+  }
+  
+  .guardar:focus {
+    outline: none;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .cancelar {
+    position: absolute;
+    top: 100px;
+    right: 140px;
+    transform: translateY(-50%);
+    width: 100px;
+    height: 40px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #8e44ad;
+    background-color: white;
+    border-color: #8e44ad;
+    border-radius: 40px;
+    cursor: pointer;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+  }
+  
+  .cancelar:hover {
+    color: white;
+    border-color: #e3acf8;
+    background-color: #e3acf8;
+  }
+  
+  .cancelar:active {
+    border-color: #7d3c98;
+    background-color: #7d3c98;
+  }
+  
+  .cancelar:focus {
+    outline: none;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .datos {
+    position:relative;
+    width: 120px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #8e44ad;
+    background-color: rgb(253, 225, 255);
+    border: none;
+    cursor: pointer;
+    order: 0;
+    flex-grow: 0;
+  }
+  
+  .datos:hover {
+    color: white;
+    border-color: #e3acf8;
+    background-color: #e3acf8;
+  }
+  
+  .datos:active {
+    border-color: #7d3c98;
+    background-color: #7d3c98;
+  }
+  
+  .datos:focus {
+    outline: none;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .Contenedor{
+    position: relative;
+    height: 50px;
+    width: 250px;
+    margin-bottom: 30px;
+  }
+  .texto {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    border: 1px solid #723880;
+    border-radius: 7px;
+    font-size: 16px;
+    padding: 20px;
+    margin-left: 10%;
+    outline: none;
+    background: none;
+    z-index: 1px;
+  }
+  .texto2 {
+    
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 400%;
+    border: 1px solid #723880;
+    border-radius: 7px;
+    font-size: 16px;
+    padding: 10px;
+    margin-left: 10%;
+    outline: none;
+    background: none;
+    z-index: 1;
+  }
+  .texto3 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    border: 1px solid #723880;
+    border-radius: 7px;
+    font-size: 16px;
+    padding: 20px;
+    margin-left: 10%;
+    outline: none;
+    background: none;
+    z-index: 1;
+  }
+  .label {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 0 4px;
+    margin-left: 10%;
+    background-color: none;
+    color: #723880;
+    font-size: 16px;
+    transition: 0.5s;
+    z-index: 0;
+  }
+  .label2 {
+    position: absolute;
+    top: 0;
+    left: 5px;
+    padding: 0 4px;
+    margin-left: 10%;
+    background-color: none;
+    color: #723880;
+    font-size: 16px;
+    
+ 
+  }
+  .label3 {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 0 4px;
+    margin-left: 10%;
+    background-color: none;
+    color: #723880;
+    font-size: 16px;
+    transition: 0.5s;
+    z-index: 0;
+  }
+  .texto:focus + .texto {
+    top: -7px;
+    left: 3px;
+    z-index: 10;
+    font-size: 14px;
+    font-weight: 500;
+    color: purple;
+  }
+  .texto:focus {
+    border: 2px solid purple;
+  }
+.texto:focus+ .label {
+    top: -7px;
+    left: 3px;
+    z-index: 10;
+    font-size: 14px;
+    font-weight: 600;
+    color: purple;
+    background-color: white;
+  }
+  .texto:hover+ .label {
+    top: -7px;
+    left: 3px;
+    z-index: 10;
+    font-size: 14px;
+    font-weight: 600;
+    color: purple;
+    background-color: white;
+  }
+
+  .texto2:focus + .texto2 {
+    top: -7px;
+    left: 3px;
+    z-index: 10;
+    font-size: 14px;
+    font-weight: 500; 
+    color: purple;
+  }
+  .texto2:focus {
+    border: 2px solid purple;
+  }
+  .texto2:hover+ .label2 {
+    top: -7px;
+    left: 3px;
+    z-index: 10;
+    font-size: 14px;
+    font-weight: 600;
+    color: purple;
+    background-color: rgb(253, 225, 255);
+  }
+  .texto2:focus+ .label2 {
+    top: -7px;
+    left: 3px;
+    z-index: 10;
+    font-size: 14px;
+    font-weight: 600;
+    color: purple;
+    background-color: rgb(253, 225, 255);
+  }
+
+  .texto3:focus + .texto3 {
+    top: -7px;
+    left: 3px;
+    z-index: 10;
+    font-size: 14px;
+    font-weight: 500; 
+    color: purple;
+  }
+  .texto3:focus {
+    border: 2px solid purple;
+  }
+  .texto3:hover+ .label3 {
+    top: -7px;
+    left: 3px;
+    z-index: 10;
+    font-size: 14px;
+    font-weight: 600;
+    color: purple;
+    background-color: rgb(253, 225, 255);
+  }
+  .texto3:focus+ .label3 {
+    top: -7px;
+    left: 3px;
+    z-index: 10;
+    font-size: 14px;
+    font-weight: 600;
+    color: purple;
+    background-color: rgb(253, 225, 255);
+  }
+
+
+  /* Datos */
+  .tablaDatos {
+    background-color: rgb(253, 225, 255);
+    height: 370px;
+    width: 1650px;
+  }
+
+  .tablaInfo{
+    column-width: 4000%;
+  }
