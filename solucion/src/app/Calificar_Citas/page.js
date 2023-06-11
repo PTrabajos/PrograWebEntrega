@@ -1,7 +1,7 @@
 'use client';
 
 import 'bootstrap/dist/css/bootstrap.css'; // Add this line
-import '../Reservar_Citas/EstilosR.css'
+import './EstilosR.css'
 
 import Form from 'react-bootstrap/Form';
 
