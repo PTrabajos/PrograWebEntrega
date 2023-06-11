@@ -7,7 +7,6 @@ import "./styles2.css"
 const Docente = () => {
 
   
-
     return (
         <div >
          
