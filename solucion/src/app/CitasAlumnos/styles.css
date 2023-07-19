@@ -1,0 +1,116 @@
+.contenedor {
+  width: 350px;
+  height: 420px;
+  border: 1px solid black;
+  margin: 0px 15px 15px 25px;
+  border-radius: 15px;
+  padding: 12px;
+}
+
+.icono {
+  height: 40px;
+  width: 40px;
+  background-color: #6750a4;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icono span {
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #fef7ff;
+}
+
+.imagen {
+  height: 148px;
+  background-color: #d9d9d9;
+}
+
+.title {
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 28px;
+  color: #000000;
+}
+
+.firstButton,
+.firstButton:hover {
+  background: #6750a4;
+  border-radius: 100px;
+  width: 170px;
+  height: 40px;
+  border: none;
+}
+
+.firstButton:active:focus {
+  box-shadow: 0 0 20px #6750a4;
+  background: #6750a4;
+}
+
+.firstTxt,
+.firstTxt:hover {
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #ffffff;
+}
+
+.subtitle {
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #000000;
+  margin-bottom: 48px;
+}
+
+.secondButton,
+.secondButton:hover {
+  padding: 0px;
+  width: 152px;
+  height: 40px;
+  border: 1px solid #79747e;
+  border-radius: 100px;
+  background: #ffffff;
+}
+
+.secondButton:active:focus {
+  box-shadow: 0 0 20px gray;
+  background: #ffffff;
+  border: 1px solid #79747e;
+}
+
+.secondTxt,
+.secondTxt:hover {
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #6750a4;
+}
+
+.custom-modal{
+  background-color: None;
+  
+}
+.custom-header{
+  opacity: 100%;
+  background-color: rgba(236, 230, 240, 1);
+
+}
+.custom-title {
+  width: 247px;
+  height: 32px;
+
+}

@@ -2,17 +2,15 @@
 import "bootstrap/dist/css/bootstrap.css"; // Add this line
 import { useEffect, useState } from "react";
 import "./styles.css";
-import Image from "next/image";
+
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import { Image } from 'react-bootstrap';
 import { useRouter } from "next/navigation";
 
-
-
-const CitasAlumnos = () => {
-  
+const CitasProfesores = () => {
   const [citas, setCitas] = useState([]);
   // MODAL
   const [show, setShow] = useState(false);
@@ -20,7 +18,6 @@ const CitasAlumnos = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  
   const [buttonText, setButtonText] = useState("Ver citas futuras");
 
   function handleClick() {
@@ -32,11 +29,10 @@ const CitasAlumnos = () => {
   }
 
   useEffect(() => {
-    setCitas(Alumnos);
+    setCitas(Profesores);
   }, []);
 
   const router = useRouter();
-
 
   return (
     <Row className="mt-4">
@@ -73,33 +69,34 @@ const CitasAlumnos = () => {
               </Col>
             </Row>
             <Row>
-              {citas.map((Alumnos) =>
+              {citas.map((profesor) =>
                 buttonText == "Ver citas pasadas" ? (
                   <Col className="contenedor">
                     <Row>
                       <Col className="subcontainer">
                         <div className="icono">
-                          <span>{Alumnos.nombreCompleto.substring(0, 1)}</span>
+                          <span>{profesor.nombreCompleto.substring(0, 1)}</span>
                           <span>
-                            {Alumnos.nombreCompleto.substring(
-                              Alumnos.nombreCompleto.indexOf(" "),
-                              Alumnos.nombreCompleto.indexOf(" ") + 2
+                            {profesor.nombreCompleto.substring(
+                              profesor.nombreCompleto.indexOf(" "),
+                              profesor.nombreCompleto.indexOf(" ") + 2
                             )}
                           </span>
                         </div>
                       </Col>
                       <Col>
-                        <div>{Alumnos.nombreCompleto}</div>
-                        <div>{Alumnos.profesion}</div>
+                        <div>{profesor.nombreCompleto}</div>
+                        <div>{profesor.profesion}</div>
                       </Col>
                     </Row>
                     <Row className="imagen">
-                      <div>IMAGEN</div>
+                    <Image src="../../../../../public/images/image1.png"  alt="profesor" fluid />
+  
                     </Row>
                     <Row>
                       <Col>
                         <div>
-                          {Alumnos.dia} - {Alumnos.horarioInicio}
+                          {profesor.dia} - {profesor.horarioInicio}
                         </div>
                       </Col>
                     </Row>
@@ -115,29 +112,28 @@ const CitasAlumnos = () => {
                     <Row>
                       <Col className="subcontainer">
                         <div className="icono">
-                          <span>{Alumnos.nombreCompleto.substring(0, 1)}</span>
+                          <span>{profesor.nombreCompleto.substring(0, 1)}</span>
                           <span>
-                            {Alumnos.nombreCompleto.substring(
-                              Alumnos.nombreCompleto.indexOf(" "),
-                              Alumnos.nombreCompleto.indexOf(" ") + 2
+                            {profesor.nombreCompleto.substring(
+                              profesor.nombreCompleto.indexOf(" "),
+                              profesor.nombreCompleto.indexOf(" ") + 2
                             )}
                           </span>
                         </div>
                       </Col>
                       <Col>
-                        <div>{Alumnos.nombreCompleto}</div>
-                        <div>{Alumnos.profesion}</div>
+                        <div>{profesor.nombreCompleto}</div>
+                        <div>{profesor.profesion}</div>
                       </Col>
                     </Row>
                     <Row className="imagen">
-                      <div >
-                        <img src="...\src\app\Images\image_4.png" alt="x" />
-                      </div>
+                    <Image src="https://png.pngtree.com/background/20211215/original/pngtree-teacher-preparing-for-lessons-in-the-daytime-male-teacher-posing-in-picture-image_1496156.jpg" alt="Profesor" fluid />
+  
                     </Row>
                     <Row>
                       <Col>
-                        <div > 
-                          {Alumnos.dia} - {Alumnos.horarioInicio}
+                        <div>
+                          {profesor.dia} - {profesor.horarioInicio}
                         </div>
                       </Col>
                     </Row>
@@ -149,12 +145,12 @@ const CitasAlumnos = () => {
                       </Col>
                     </Row>
                     {/* POPUP */}
-                    <Modal show={show} onHide={handleClose}>
-                      <Modal.Header closeButton>
-                        <Modal.Title>Modal heading</Modal.Title>
+                    <Modal show={show} onHide={handleClose} className="custom-modal">
+                      <Modal.Header className="custom-header">
+                        <Modal.Title className="custom-title">Calificar Profesor</Modal.Title>
                       </Modal.Header>
-                      <Modal.Body>
-                        Woohoo, you are reading this text in a modal!
+                      <Modal.Body >
+                      Seleccione la cantidad de estrellas que desea otorgarle (1 estrella = Mala, 5 estrellas = Excelente)):
                       </Modal.Body>
                       <Modal.Footer>
                         <Button variant="secondary" onClick={handleClose}>
@@ -198,41 +194,41 @@ const CitasAlumnos = () => {
   );
 };
 
-export default CitasAlumnos;
+export default CitasProfesores;
 
-let Alumnos = [
+let Profesores = [
   {
-    id: 10,
-    nombreCompleto: "Jose Manuel MeLtran",
-    profesion: "Estudiante de Ingeniería de Sistemas",
-    imagen: "C:\Users\piero\OneDrive\Escritorio\HTML\TRABAJO DE CURSO\solucion\src\app\Images\image_4.png",
+    id: 1,
+    nombreCompleto: "Juan Lopez",
+    profesion: "Mg. Ingeniería de Sistemas",
+    imagen: "../../../../../public/images/image1.png",
     dia: "01/24/2023",
     horarioInicio: "08:00 am",
     curso: "Programación Web",
   },
   {
-    id: 20,
-    nombreCompleto: "Adrian Balmaceda",
+    id: 2,
+    nombreCompleto: "Adriana Sanchez",
     profesion: "Mg. Ingeniería de Sistemas",
-    imagen: "C:\Users\piero\OneDrive\Escritorio\HTML\TRABAJO DE CURSO\solucion\src\app\Images\image_5.png",
+    imagen: "../../app/Images/image 2.png",
     dia: "02/27/2023",
     horarioInicio: "04:00 pm",
     curso: "Programación orientada a objetos",
   },
   {
-    id: 30,
-    nombreCompleto: "Humberto José",
+    id: 3,
+    nombreCompleto: "Herbert Huaman",
     profesion: "Mg. Ingeniería de Sistemas",
-    //imagen: require("../../public/images/Alumnos/Alumnos.png"),
+    // imagen: require("../../public/images/Profesor/profesor.png"),
     dia: "06/23/2023",
     horarioInicio: "10:00 am",
     curso: "Programación Web",
   },
   {
-    id: 40,
-    nombreCompleto: "Mark Antoni Pereyra",
+    id: 4,
+    nombreCompleto: "Marco Antonio",
     profesion: "Mg. Ingeniería de Sistemas",
-    //imagen: require("../../public/images/Alumnos/Alumnosa.png"),
+    imagen: "../../app/images/image1.png",
     dia: "06/30/2023",
     horarioInicio: "07:00 pm",
     curso: "Programación orientada a objetos",

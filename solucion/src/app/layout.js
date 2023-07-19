@@ -46,7 +46,7 @@ function RootLayout({ children }) {
                 <Link href="/PerfilDocente" text="Perfil Docente"/>
                 </nav>
                 <nav class="item">
-                <Link href="/MisCitas" text="Citas"/>
+                <Link href="/CitasAlumnos" text="Citas"/>
                 </nav>
                 <nav class="item">
                 <Link href="/reservarcita" text="Reservar citas"/>
