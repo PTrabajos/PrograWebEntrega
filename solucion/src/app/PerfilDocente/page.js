@@ -1,149 +1,86 @@
-'use client';
+'use client'
 
-import './perfil1.css'
+import { Tab } from "bootstrap"
+import { useState } from "react"
+import ".//perfil1.css"
 import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
-import Chip from '../../components/Chip/Chip.jsx'
-import { useState } from 'react'
-import { useRouter } from 'next/navigation'
-import showForm from 'react'
 
-const PerfilDocente = () => {
 
-    function showForm(formName) {
-        var forms = document.getElementsByClassName('form-container');
-        for (var i = 0; i < forms.length; i++) {
-            forms[i];
-        }
-        
-    }
-
-  
-    const router = useRouter()
-    {
-        
-    
-
-    return (
-        <div>  
-            <div class="middlebar">
-                <h2>MI PERFIL</h2>
-                <div class="boton">
-                    <Button>Cancelar</Button>
-                    &nbsp;
-                    <Button class="button">Guardar</Button>
-                </div>
-            </div>
-
-            <hr class="linea" />
+function Info(){
+    return <div>
+        <table className="tablaInfo">
+            <tr>
+                <td><h1 style={{fontSize:30, marginTop:30}}>Mi Perfil</h1></td>
+                <td><button class="cancelar">Cancelar</button></td>
+                <td><button class="guardar">Guardar</button></td>
+            </tr>
+        </table>
+        <hr></hr>
+        <h2 >Informacion Personal</h2>
+        <table>
+            <tr>
+                <td style={{width: "20%"}}><div className="Contenedor"><label class="label">Nombre</label><br/><input type="text" class="texto" name="" id="" /></div></td>
+                <td style={{width: "20%"}}><div className="Contenedor"><label class="label">Apellidos</label><br/><input type="text" class="texto" name="" id=""/></div></td>
+                <td style={{width: "20%"}}><div className="Contenedor"><label class="label">Tipo de Documento</label><br/><input type="text" class="texto" name="" id=""/></div></td>
+                <td style={{width: "20%"}}><img src="https://media.tenor.com/vjDSipHhsjAAAAAd/fortnite-snake-eyes.gif" style={{ width: "50%" }} alt=""/></td></tr>
             
-            <br/> 
-            <div class="barra"> 
-                <h2>
-                    Informacion Personal
-                </h2>
-            </div>
-
-            <div className="img"><img src ="https://media.tenor.com/vjDSipHhsjAAAAAd/fortnite-snake-eyes.gif" style ={{ width:"45%"}} alt=""/></div>
-        
-            <br/>
-                
-           <form class="row g-3 needs-validation" novalidate>
-                <div class="col-md-4">
-                    <label for="validationCustom01" class="form-label">Nombres</label>
-                    <input type="text" class="form-control" 
-                    id="validationCustom01" 
-                    placeholder="" 
-                    required/>
-                  
-                </div> 
-                <div class="col-md-2">
-                    <label for="validationCustom02" class="form-label">Apellidos</label>
-                    <input type="text" 
-                    class="form-control" 
-                    id="validationCustom02" 
-                    placeholder="" 
-                    required/>
-                </div>
-
-                <div class="col-md-5">
-                    <label for="validationCustomUsername" class="form-label">Documentos</label>
-                    <div class="input-group has-validation">
-                        <input type="text" class="form-control" id="validationCustomUsername" 
-                        aria-describedby="inputGroupPrepend" required/>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <label for="validationCustom03" class="form-label">Rol</label>
-                    <input type="text" 
-                    class="form-control" 
-                    id="validationCustom03" 
-                    placeholder=""
-                    required/>
-                    <div class="invalid-feedback">
-                   
-                    </div>
-                </div>
-
-               
-                <div class="col-md-3">
-                    <label for="validationCustom05" class="form-label">Numero</label>
-                    <input type="text" class="form-control" id="validationCustom05" required/>
-                    <div class="invalid-feedback">
-
-                    </div>
-                </div>
-            </form>
-
-            <br/> <br/>
-
-            <div>
-                <header class="cabecera">
-                    
-                    <button onClick={() => showForm()}><h4 class="nav">Datos de usuario </h4></button>
-                    <button onClick={() => showForm()}><h4 class="nav"> Universidad </h4></button>
-                    <button onClick={() => showForm()}><h4 class="nav">Presentación </h4></button>
-                </header>
-
-                <div>
-                <div class="contenido"> 
-            
-                    <div id="userForm" class="form-container"> 
-                        <form>
-                            <input type="text" placeholder="Usuario"/>
-                            <br/> <br/>
-                            <input type="password" placeholder="Contraseña"/>
-                            <br/><br/>
-                            
-                        </form>
-                    </div>
-
-                    <div id="universityForm" class="form-container">
-                        <form>
-                            <input type="text" placeholder="Nombre de la universidad"/>
-                            <input type="text" placeholder="Carrera"/>
-                            <input type="text" placeholder="Cursos"/>
-                        
-                        </form>
-                    </div>
-
-                    <div id="presentationForm"  class="form-container">
-                        <form>
-                            <input type="text" placeholder="Título de profesión"/>
-                            <input type="text" placeholder="Curso especializado"/>
-                        
-                        </form>
-                    </div>
-
-         
-                </div> 
-
-
-                </div>
-
-            </div>
-        </div>       
-    )
-} 
+            <tr>
+            <td><div className="Contenedor"><label class="label">Rol</label><br/><input type="text" class="texto" name="" id=""/></div></td>
+                <td></td>
+                <td><div className="Contenedor"><label class="label">Numero</label><br/><input type="text" class="texto" name="" id=""/></div></td>
+                <td>Adjuntar foto</td>
+            </tr>
+        </table>
+    </div>
 }
+
+function Datos(){
+    const [opt, setOpt] = useState(0)
+    
+    let x
+    if (opt === 0){
+        x = <table className="tablaDatos"><br/>
+        <tr>
+            <td><div className="Contenedor"><br/><input type="text" class="texto3" name="" id=""/><label class="label3">Usuario</label></div></td>
+        </tr>
+        <tr>
+            <td><div className="Contenedor"><label class="label3">Contraseña Actual</label><br/><input type="password" class="texto3" name="" id=""/></div></td>
+            <td><div className="Contenedor"><label class="label3">Nueva Contraseña</label><br/><input type="password" class="texto3" name="" id="" /></div></td>
+            <td><div className="Contenedor"><label class="label3">Repetir Contraseña</label><br/><input type="password" class="texto3" name="" id="" /></div></td>
+        </tr>
+        </table>
+    }
+    else if(opt === 1){
+        x = <table className="tablaDatos"><br/>
+        <tr>
+            <td><div className="Contenedor"><label htmlFor="" class="label3" type="text" >Universidad</label><br/><input type="text" class="texto3"/></div></td>
+           
+    
+            <td><div className="Contenedor"><label htmlFor="" class="label3">Agregar cursos</label><br/><input type="text" class="texto3" name="" id=""/></div></td>
+        </tr>
+        <tr>
+            <td><div className="Contenedor"><label class="label3">Carrera</label><br/><input type="text" class="texto3" name=""/></div></td>
+        </tr>   
+        </table>
+    }
+    else{
+        x = <table className="tablaDatos"><br/>
+            <tr><div className="Contenedor"><label class="label2">Titulo</label><br/><input type="text" class="texto2" name=""/></div></tr>
+            <tr><div className="Contenedor"><label class="label2">Descripcion</label><br/><input type="text" class="texto2" name=""/></div></tr>
+            </table>
+    }
+    return <div><button className="datos" onClick={()=>setOpt(0)}>Datos de usuario</button><button className="datos" onClick={()=>setOpt(1)}>Universidad</button><button className="datos" onClick={()=>setOpt(2)}>Presentacion</button>
+    {x}
+    </div>
+}
+
+function PerfilDocente() {
+    return <div>
+        <div className="row">
+        <div className="col-md-11"><Info/>
+        <Datos/></div>
+    </div>
+    </div>
+}
+
 export default PerfilDocente
