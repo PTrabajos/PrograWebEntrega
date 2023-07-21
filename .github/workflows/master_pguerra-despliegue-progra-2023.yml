@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'PGuerra-despliegue-progra-2023'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BFF6696577AA4C34A8EB24FDA304EF1C }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F1FB85EEC231463AA1DB7B9163B13D59 }}
           package: .
