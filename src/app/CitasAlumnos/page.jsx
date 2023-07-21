@@ -2,7 +2,6 @@
 import "bootstrap/dist/css/bootstrap.css"; // Add this line
 import { useEffect, useState } from "react";
 import "./styles.css";
-
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
@@ -127,7 +126,7 @@ const CitasProfesores = () => {
                       </Col>
                     </Row>
                     <Row className="imagen">
-                    <Image src="https://png.pngtree.com/background/20211215/original/pngtree-teacher-preparing-for-lessons-in-the-daytime-male-teacher-posing-in-picture-image_1496156.jpg" alt="Profesor" fluid />
+                    <Image className="contenido" src={profesor.imagen} alt="Profesor" fluid/>
   
                     </Row>
                     <Row>
@@ -201,7 +200,7 @@ let Profesores = [
     id: 1,
     nombreCompleto: "Juan Lopez",
     profesion: "Mg. Ingeniería de Sistemas",
-    imagen: "../../../../../public/images/image1.png",
+    imagen: "https://i0.wp.com/www.lucaedu.com/wp-content/uploads/2022/01/iStock-1160927409.jpg?resize=1080%2C720&ssl=1",
     dia: "01/24/2023",
     horarioInicio: "08:00 am",
     curso: "Programación Web",
@@ -210,7 +209,7 @@ let Profesores = [
     id: 2,
     nombreCompleto: "Adriana Sanchez",
     profesion: "Mg. Ingeniería de Sistemas",
-    imagen: "../../app/Images/image 2.png",
+    imagen: "https://sites.google.com/a/glm.edu.co/syllabus-actualidad/_/rsrc/1468849745136/home/perfil-del-profesor/Obapersonal_%20073.jpg",
     dia: "02/27/2023",
     horarioInicio: "04:00 pm",
     curso: "Programación orientada a objetos",
@@ -219,7 +218,7 @@ let Profesores = [
     id: 3,
     nombreCompleto: "Herbert Huaman",
     profesion: "Mg. Ingeniería de Sistemas",
-    // imagen: require("../../public/images/Profesor/profesor.png"),
+    imagen: "https://png.pngtree.com/background/20211215/original/pngtree-teacher-preparing-for-lessons-in-the-daytime-male-teacher-posing-in-picture-image_1496156.jpg",
     dia: "06/23/2023",
     horarioInicio: "10:00 am",
     curso: "Programación Web",
@@ -228,7 +227,7 @@ let Profesores = [
     id: 4,
     nombreCompleto: "Marco Antonio",
     profesion: "Mg. Ingeniería de Sistemas",
-    imagen: "../../app/images/image1.png",
+    imagen: "https://www.lucaedu.com/wp-content/uploads/2022/01/Banner-PerfilDocente.jpg",
     dia: "06/30/2023",
     horarioInicio: "07:00 pm",
     curso: "Programación orientada a objetos",

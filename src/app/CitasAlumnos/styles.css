@@ -25,6 +25,11 @@
   line-height: 24px;
   color: #fef7ff;
 }
+.contenido {
+ height: 100%;
+ width: 150%;
+ margin: 0;
+}
 
 .imagen {
   height: 148px;
