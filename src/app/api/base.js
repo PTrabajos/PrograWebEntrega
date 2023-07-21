@@ -20,3 +20,30 @@ const post = async (endpoint, request) => {
     }
 
 }
+
+const put = async (endpoint,request) => {
+    try {
+        const url = URI.concat(endpoint);
+
+        return await axios.put(url,request);
+    } catch(err) {
+        console.error(err);
+        return null;
+    }
+}
+
+const remove = async (endpoint) => {
+
+    try {
+        const url = URI.concat(endpoint);
+
+        return await axios.delete(url);
+    } catch(err) {
+        console.error(err);
+        return null;
+    }
+}
+
+const Base = { get, put, post, remove }
+
+export default Base;
