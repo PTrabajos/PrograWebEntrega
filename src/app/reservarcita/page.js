@@ -1,119 +1,85 @@
-'use client'
 
-import { useState } from "react"
-import ".//page.css"
+'use client';
+import React, { useState } from 'react';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+import Form from 'react-bootstrap/Form';
+import Chip from '../../components/Chip/Chip.jsx';
+import Tab from 'react-bootstrap/Tab';
+import Tabs from 'react-bootstrap/Tabs';
 
-function Info() {
+function reservarcita() {
+  const busquedas = ["Felipe Lopez Jimenez", "Juanito alcachofa"];
+  const [arr, setArr] = useState(busquedas);
+  const [textBusqueda, setTextBusqueda] = useState("");
+  const [tipoBusqueda, setTipoBusqueda] = useState("Por nombre");
+  const [selectedDate, setSelectedDate] = useState(null);
+
+  const handleTabSelect = (key) => {
+    setTipoBusqueda(key);
+    setTextBusqueda("");
+    setSelectedDate(null);
+  };
+
+  const getPlaceholderText = () => {
+    switch (tipoBusqueda) {
+      case "Por fecha":
+        return "Ingrese fecha a buscar";
+      case "Por tipo de asesoria":
+        return "Ingrese tipo de asesoria a buscar";
+      default:
+        return "Ingrese nombre a buscar";
+    }
+  };
+
+  const filterResults = () => {
+    return arr.filter(f => f.includes(textBusqueda));
+  };
+
   return (
-    <div>
-      <table className="tablaInfo">
-        <tr>
-          <td>
-            <h1 style={{ fontSize: 30, marginTop: 30 }}>Reservar Cita</h1>
-          </td>
-        </tr>
-      </table>
+    <div style={{ display: 'flex' }}>
+      <h2>Reserva de cita</h2>
+      <Tabs
+        defaultActiveKey="Por nombre"
+        transition={false}
+        id="noanim-tab-example"
+        className="mb-3"
+        onSelect={handleTabSelect}
+      >
+        <Tab eventKey="Por nombre" title="Por nombre">
+          Búsqueda por nombre
+        </Tab>
+        <Tab eventKey="Por fecha" title="Por fecha">
+          Búsqueda por fecha
+        </Tab>
+        <Tab eventKey="Por tipo de asesoria" title="Por tipo de asesoria">
+          Búsqueda por Tipo de asesoria
+        </Tab>
+      </Tabs>
+      <Form.Control
+        className='Barra_Busqueda'
+        type="text"
+        value={textBusqueda}
+        onChange={e => setTextBusqueda(e.target.value)}
+        placeholder={getPlaceholderText()}
+      />
+      {tipoBusqueda === "Por fecha" && (
+        <DatePicker
+          selected={selectedDate}
+          onChange={(date) => setSelectedDate(date)}
+          placeholderText="Seleccione una fecha"
+        />
+      )}
+      <p>{tipoBusqueda === "Por tipo de asesoria" ? "Ingrese tipo de asesoria a buscar" : "Ingrese nombre a buscar"}</p>
+      <ul className="nobullets">
+        {filterResults().map(busqueda => {
+          return (<li key={busqueda} style={{ display: 'inline-block', borderColor: 'red' }}>
+            <Chip text={busqueda} /></li>);
+        })}
+      </ul>
       <hr />
-      <h2 style={{ fontSize: 15 }}>Calificaciones</h2>
-      <table>
-        <tr>
-          <td style={{ width: "20%" }}>
-            <div className="Contenedor">
-              <br />
-              <input type="text" className="texto" name="" id="" />
-              <label className="label">Calificación 1</label>
-            </div>
-          </td>
-          <td style={{ width: "20%" }}>
-            <div className="Contenedor">
-              <br />
-              <input type="text" className="texto" name="" id="" />
-              <label className="label">Calificación 2</label>
-            </div>
-          </td>
-          <td style={{ width: "20%" }}>
-            <div className="Contenedor">
-              <br />
-              <input type="text" className="texto" name="" id="" />
-              <label className="label">Calificación 3</label>
-            </div>
-          </td>
-        </tr>
-        <hr />
-        <h2 style={{ fontSize: 15 }}>Papeleo para citas</h2>
-        <tr>
-          <td>
-            <div className="Contenedor">
-              <br />
-              <input type="text" className="texto" name="" id="" />
-              <label className="label">Nombre del alumno</label>
-            </div>
-          </td>
-          <td>
-            <div className="Contenedor">
-              <br />
-              <input type="text" className="texto" name="" id="" />
-              <label className="label">Profesor citado</label>
-            </div>
-          </td>
-          <td>
-            <button className="cancelarcita">Cancelar Cita</button>
-          </td>
-          <td>
-            <button className="aceptar">Aceptar Cita</button>
-          </td>
-        </tr>
-      </table>
-      <hr />
-      <h2 style={{ fontSize: 15 }}>Búsquedas Citas</h2>
     </div>
   );
 }
-function Datos(){
-    
-    const [opt, setOpt] = useState(0)
-    let x
-    if (opt === 0){
-        x = <table className="tablaDatos"><br/>
-        <tr>
-            <td><div className="Contenedor"><br/><input type="text" class="texto3" name="" id=""/><label class="label3">Ususario</label></div></td>
-        </tr>
-        <tr>
-            <td><div className="Contenedor"><input type="password" class="texto3" name="" id=""/><label class="label3">Nombres</label></div></td>
-            <td><div className="Contenedor"><input type="password" class="texto3" name="" id="" /><label class="label3">Primer Apellido</label></div></td>
-            <td><div className="Contenedor"><input type="password" class="texto3" name="" id="" /><label class="label3">Segundo Apellido</label></div></td>
-        </tr>
-        </table>
-    }
-    else if(opt === 1){
-        x = <table className="tablaDatos"><br/>
-        <tr>
-            <td><div className="Contenedor"><input type="text" class="texto3"/><label htmlFor="" class="label3">Universidad</label></div></td>
-            <td><div className="Contenedor"><input type="text" class="texto3" name="" id=""/><label htmlFor="" class="label3">País</label></div></td>
-        </tr>
-        <tr>
-            <td><div className="Contenedor"><br/><input type="text" class="texto3" name=""/><label class="label3">Distrito</label></div></td>
-        </tr>   
-        </table>
-    }
-    else{
-        x = <table className="tablaDatos"><br/>
-            <tr><div className="Contenedor"><br/><input type="text" class="texto2" name=""/><label class="label2">Carrera</label></div></tr>
-            <tr><div className="Contenedor"><br/><input type="text" class="texto2" name=""/><label class="label2">Facultad</label></div></tr>
-            </table>
-    }
-    return <div><button className="datos" onClick={()=>setOpt(0)}>Nombre</button><button className="datos" onClick={()=>setOpt(1)}>Universidad</button><button className="datos" onClick={()=>setOpt(2)}>Carrera</button>
-    {x}
-    </div>
-}
 
-function reservarcita() {
-    return <div>
-        <div className="row">
-        <div className="col-md-11"><Info/>
-        <Datos/></div>
-    </div>
-    </div>
-}
-
-export default reservarcita
+export default reservarcita;
