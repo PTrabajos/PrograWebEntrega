@@ -1,5 +1,6 @@
 "use client";
 import { useRef, useState, useEffect } from "react";
+
 import { Box, Modal, Slider, Button } from "@mui/material";
 import AvatarEditor from "react-avatar-editor";
 import styles from "../Avatar/Avatar.module.css";

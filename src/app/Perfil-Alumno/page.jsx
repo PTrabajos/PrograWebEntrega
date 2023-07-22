@@ -4,7 +4,7 @@ import { useEffect } from "react";
 //import TopBar from "@/components/TopBar/TopBar";
 //import Menu from "@/components/MenuAlumno/Menu";
 import styles from "../Perfil-Alumno/page.module.css";
-import { Button, Container, FormControl, FormLabel } from "react-bootstrap";
+//import { Button, Container, FormControl, FormLabel } from "react-bootstrap";
 import Avatar from "../../components/Avatar/Avatar"
 //import Button from '../../components/Button/Button.jsx';
 import Inicio from "@/components/Inicio/inicio.jsx" //cambio

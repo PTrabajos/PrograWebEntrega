@@ -89,7 +89,7 @@ const CitasProfesores = () => {
                       </Col>
                     </Row>
                     <Row className="imagen">
-                    <Image src="../../../../../public/images/image1.png"  alt="profesor" fluid />
+                    <Image className="contenido" src={profesor.imagen}  alt="profesor" fluid />
   
                     </Row>
                     <Row>

@@ -144,9 +144,7 @@ const CitasAlumnos = () => {
                     <div>Enlace de Zoom</div>
                     <Row>
                       <Col>No califacdo</Col>
-                      <Col>
-                        <button onClick={handleShow}>Calificar</button>
-                      </Col>
+                      
                     </Row>
                     {/* POPUP */}
                     <Modal show={show} onHide={handleClose}>
@@ -205,7 +203,7 @@ let Alumnos = [
     id: 10,
     nombreCompleto: "Jose Manuel MeLtran",
     profesion: "Estudiante de Ingeniería de Sistemas",
-    imagen: "C:\Users\piero\OneDrive\Escritorio\HTML\TRABAJO DE CURSO\solucion\src\app\Images\image_4.png",
+    imagen: "../../public/images/Alumnos/Alumnos.png",
     dia: "01/24/2023",
     horarioInicio: "08:00 am",
     curso: "Programación Web",
@@ -213,7 +211,7 @@ let Alumnos = [
   {
     id: 20,
     nombreCompleto: "Adrian Balmaceda",
-    profesion: "Mg. Ingeniería de Sistemas",
+    profesion: "Estudiante de Ingeniería de Sistemas",
     imagen: "C:\Users\piero\OneDrive\Escritorio\HTML\TRABAJO DE CURSO\solucion\src\app\Images\image_5.png",
     dia: "02/27/2023",
     horarioInicio: "04:00 pm",
@@ -222,7 +220,7 @@ let Alumnos = [
   {
     id: 30,
     nombreCompleto: "Humberto José",
-    profesion: "Mg. Ingeniería de Sistemas",
+    profesion: "Estudiante de Ingeniería de Sistemas",
     //imagen: require("../../public/images/Alumnos/Alumnos.png"),
     dia: "06/23/2023",
     horarioInicio: "10:00 am",
@@ -231,7 +229,7 @@ let Alumnos = [
   {
     id: 40,
     nombreCompleto: "Mark Antoni Pereyra",
-    profesion: "Mg. Ingeniería de Sistemas",
+    profesion: "Estudiante de Ingeniería Industrial",
     //imagen: require("../../public/images/Alumnos/Alumnosa.png"),
     dia: "06/30/2023",
     horarioInicio: "07:00 pm",
