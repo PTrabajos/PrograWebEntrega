@@ -1,66 +1,51 @@
 "use client"
-
 import 'bootstrap/dist/css/bootstrap.css'; // Add this line
 import 'bootstrap/dist/js/bootstrap.bundle.js' ;
 
 import './globals.css'
 import { Inter } from 'next/font/google'
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import dynamic from "next/dynamic";
-import React, {Component} from 'react';
-import { BsFillPersonFill } from "react-icons/bs";
-import Link from '../components/Link/Link.jsx';
-
-
+import TopBar from "@/components/TopBar/TopBar.jsx";
+import Menu from "@/components/Menu/Menu.jsx";
+import styles from "@/app/page.module.css";
 
 const inter = Inter({ subsets: ['latin'] })
 
 function RootLayout({ children }) {
+  
+  //Mostrar Menu
+  const [menuIsVisible, setMenuIsVisible] = useState(false);
+
+  function aparecerMenu() {
+    setMenuIsVisible(!menuIsVisible);
+  }
+
+  let barraLateral;
+  if (menuIsVisible) {
+    barraLateral = <Menu />;
+  }
 
   return (
     <html lang="en">
       <head>
- 
+
       </head>
-      <body>
-        <div class="Contenido">
-        <header class="Cabecera">
-            <div class="menu-toggle">
-                <div class="hamburger"></div>
+      <body className={inter.className}>
+        {window.localStorage.getItem("rol") == null || window.localStorage.getItem("rol") == ""?
+          children
+        :
+          <div>
+            <TopBar onButtonClick={aparecerMenu}></TopBar>
+            <div className={styles.Main}>
+              <div className={styles.Info}>
+                {children}
+              </div>
+              <div className={styles.Menu}>{barraLateral}</div>
             </div>
-            
-            <h2>Atención de Citas</h2>
-            <div class="Perfil">
-                <BsFillPersonFill/>
-            </div>
-        </header>
-        <div class="Contenido-Menu">
-            <nav class="menu">
-                <nav class="item">
-                <Link href="/Alumno" text="Princial"/>
-                </nav>
-                <nav class="item">
-                <Link href="/Perfil" text="Perfil Alumno"/>
-                </nav>
-                <nav class="item">
-                <Link href="/PerfilDocente" text="Perfil Docente"/>
-                </nav>
-                <nav class="item">
-                <Link href="/CitasAlumnos" text="Citas"/>
-                </nav>
-                <nav class="item">
-                <Link href="/reservarcita" text="Reservar citas"/>
-                </nav>
-                
-                <h6 class="version">SAC v1.0.1+alpha</h6>
-                
-            </nav>
         </div>
-        <section className='principal'>
-          {children}
-        </section>
-    </div>
-</body>
+        }
+      </body>
     </html>
   )
 }
