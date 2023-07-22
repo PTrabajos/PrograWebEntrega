@@ -1,13 +1,18 @@
-'use client'
+"use client";
+import React, { useState } from "react";
+import TopBar from "@/components/TopBarInicio/TopBarInicio";
+import styles from "../App/page.module.css";
+import Inicio from "@/components/Inicio/inicio.jsx" //cambio
 
-
-import Link from '../components/Link/Link.jsx';
-
-export default function Home() {
+const PageInicio = () => {
+  Inicio("/")
   return (
-    <main >
-      
-      
-    </main>
-  )
-}
+    <div>
+      <TopBar></TopBar>
+      <div className={styles.fondo}>
+      </div>
+    </div>
+  );
+};
+
+export default PageInicio;
