@@ -1,5 +1,4 @@
-
-'use client';
+"use client"
 import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -9,11 +8,12 @@ import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 
 function reservarcita() {
-  const busquedas = ["Felipe Lopez Jimenez", "Juanito alcachofa"];
+  const busquedas = ["Elemento1", "Elemento2"];
   const [arr, setArr] = useState(busquedas);
   const [textBusqueda, setTextBusqueda] = useState("");
   const [tipoBusqueda, setTipoBusqueda] = useState("Por nombre");
   const [selectedDate, setSelectedDate] = useState(null);
+  const [selectedTipoAsesoria, setSelectedTipoAsesoria] = useState("materia");
 
   const handleTabSelect = (key) => {
     setTipoBusqueda(key);
@@ -21,12 +21,16 @@ function reservarcita() {
     setSelectedDate(null);
   };
 
+  const handleTipoAsesoriaChange = (e) => {
+    setSelectedTipoAsesoria(e.target.value);
+  };
+
   const getPlaceholderText = () => {
     switch (tipoBusqueda) {
       case "Por fecha":
         return "Ingrese fecha a buscar";
       case "Por tipo de asesoria":
-        return "Ingrese tipo de asesoria a buscar";
+        return "Seleccione tipo de asesoria";
       default:
         return "Ingrese nombre a buscar";
     }
@@ -53,7 +57,27 @@ function reservarcita() {
           Búsqueda por fecha
         </Tab>
         <Tab eventKey="Por tipo de asesoria" title="Por tipo de asesoria">
-          Búsqueda por Tipo de asesoria
+          <Form.Group>
+            <Form.Label>Seleccione tipo de asesoria:</Form.Label>
+            <div>
+              <Form.Check
+                type="radio"
+                label="Materia"
+                name="tipoAsesoria"
+                value="materia"
+                checked={selectedTipoAsesoria === "materia"}
+                onChange={handleTipoAsesoriaChange}
+              />
+              <Form.Check
+                type="radio"
+                label="Tesis"
+                name="tipoAsesoria"
+                value="tesis"
+                checked={selectedTipoAsesoria === "tesis"}
+                onChange={handleTipoAsesoriaChange}
+              />
+            </div>
+          </Form.Group>
         </Tab>
       </Tabs>
       <Form.Control
@@ -70,7 +94,7 @@ function reservarcita() {
           placeholderText="Seleccione una fecha"
         />
       )}
-      <p>{tipoBusqueda === "Por tipo de asesoria" ? "Ingrese tipo de asesoria a buscar" : "Ingrese nombre a buscar"}</p>
+      <p>{tipoBusqueda === "Por tipo de asesoria" ? "Seleccione tipo de asesoria" : "Ingrese nombre a buscar"}</p>
       <ul className="nobullets">
         {filterResults().map(busqueda => {
           return (<li key={busqueda} style={{ display: 'inline-block', borderColor: 'red' }}>
